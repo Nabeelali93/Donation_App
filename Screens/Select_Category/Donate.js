@@ -4,6 +4,8 @@ import React, { useState } from 'react'
 import Snackbar from 'react-native-snackbar';
 import database from '@react-native-firebase/database';
 import firestore from '@react-native-firebase/firestore';
+import { Sweet_Alert } from '../../Common/Sweetalert';
+
 
 
 const Donate = ({route,navigation}) => {
@@ -24,12 +26,8 @@ const Donate = ({route,navigation}) => {
           .ref(`/users/quick_donate/${key}`)
           .set(obj)
           .then(() => {
-            Snackbar.show({
-              text: 'Thanks For Donate',
-              duration: Snackbar.LENGTH_SHORT,
-              backgroundColor:"grey",
-              textColor:"white"
-            });
+            Sweet_Alert(" Thanks For Donation", "", 'Success')
+
           });
     }
     

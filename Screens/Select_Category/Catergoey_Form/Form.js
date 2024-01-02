@@ -102,7 +102,6 @@ if(req == "request"){
       .then(() => console.log('Data set.'));
       Sweet_Alert("Your Request has been submitted", "Your Request has been submitted", 'success')
 
-    console.log('Form is valid, submitting data:', data);
   }
   
   
@@ -141,7 +140,6 @@ else{
       Sweet_Alert("Thanks For Donate", "Thanks For Donation", 'error')
 
     });
-    console.log('Form is valid, submitting data:', data);
   } else {
 
 
@@ -272,8 +270,8 @@ else{
    
 
     </View>
-    <TouchableOpacity  title="Submit" style={{bordermargin:20, height:70 ,backgroundColor:'#0A639C',alignItems:'center',justifyContent:'center'}} onPress={() => handleSubmitDetails()}>
-  <Text>Submit</Text>
+    <TouchableOpacity  title="Submit" style={{bordermargin:20,height:70,width:300,margin:30,borderRadius:20 ,backgroundColor:'#0A639C',alignItems:'center',justifyContent:'center'}} onPress={() => handleSubmitDetails()}>
+  <Text style={{color:"white" }}>Submit</Text>
   </TouchableOpacity>
     </ScrollView>
 

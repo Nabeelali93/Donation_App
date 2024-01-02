@@ -95,7 +95,6 @@ const SignUp = ({navigation}) => {
   Sweet_Alert("Enter Correct Data", "Please Enter Correct Data", 'Error')
 
 
-  console.error(error);
 });
         }
 

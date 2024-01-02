@@ -1,13 +1,6 @@
 import React from 'react';
-import {
-  Alert,
-  Animated,
-  ScrollView,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-import { CurvedBottomBarExpo } from 'react-native-curved-bottom-bar';
+import {Animated, StyleSheet, TouchableOpacity, View} from 'react-native';
+import {CurvedBottomBarExpo} from 'react-native-curved-bottom-bar';
 import Ionicons from 'react-native-vector-icons/AntDesign';
 import Plus from 'react-native-vector-icons/Feather';
 
@@ -16,15 +9,7 @@ import Media from './BottamTabComponets/Media';
 import Profile from './BottamTabComponets/Profile';
 import Seating from './BottamTabComponets/Seating';
 
-const Screen1 = () => {
-  return <View style={styles.screen1} />;
-};
-
-const Screen2 = () => {
-  return <View style={styles.screen2} />;
-};
-
-export default function  Main() {
+export default function Main() {
   const _renderIcon = (routeName, selectedTab) => {
     let icon = '';
 
@@ -35,13 +20,12 @@ export default function  Main() {
       case 'Media':
         icon = 'playcircleo';
         break;
-        case "title3":
-        icon= "setting";
-        break
-        case "profile":
-        icon = "smileo"
-        break
-
+      case 'title3':
+        icon = 'setting';
+        break;
+      case 'profile':
+        icon = 'smileo';
+        break;
     }
 
     return (
@@ -52,19 +36,18 @@ export default function  Main() {
       />
     );
   };
-  const renderTabBar = ({ routeName, selectedTab, navigate }) => {
+  const renderTabBar = ({routeName, selectedTab, navigate}) => {
     return (
       <TouchableOpacity
         onPress={() => navigate(routeName)}
-        style={styles.tabbarItem}
-      >
+        style={styles.tabbarItem}>
         {_renderIcon(routeName, selectedTab)}
       </TouchableOpacity>
     );
   };
 
   return (
-<View style={{flex:1}}>
+    <View style={{flex: 1}}>
       <CurvedBottomBarExpo.Navigator
         type="DOWN"
         style={styles.bottomBar}
@@ -77,65 +60,41 @@ export default function  Main() {
         screenOptions={{
           headerShown: false, // Add this line to hide the header by default
         }}
-        
-        renderCircle={({ selectedTab, navigate,  }) => (
+        renderCircle={({selectedTab, navigate}) => (
           <Animated.View style={styles.btnCircleUp}>
             <TouchableOpacity
               style={styles.button}
-              onPress={() => navigate("registration")}
-            >
-              <Plus name={'plus'} color="white" size={35}  />
+              onPress={() => navigate('registration')}>
+              <Plus name={'plus'} color="white" size={35} />
             </TouchableOpacity>
           </Animated.View>
         )}
-        tabBar={renderTabBar}
-      >
-
-        
-
-
+        tabBar={renderTabBar}>
         <CurvedBottomBarExpo.Screen
           name="Home"
           position="LEFT"
-          
-          component={() =>
-            
-           
-            <Home/>
-
-          }
+          component={() => <Home />}
         />
 
-
-
-         <CurvedBottomBarExpo.Screen
+        <CurvedBottomBarExpo.Screen
           name="Media"
-          component={() => <Media/>}
+          component={() => <Media />}
           position="LEFT"
         />
-
-
-
 
         <CurvedBottomBarExpo.Screen
           name="title3"
           position="RIGHT"
-          component={() => <Seating/>}
+          component={() => <Seating />}
         />
 
-
-
-         <CurvedBottomBarExpo.Screen
+        <CurvedBottomBarExpo.Screen
           name="profile"
-          component={() => <Profile/>}
+          component={() => <Profile />}
           position="RIGHT"
         />
-       
-
-
-        
       </CurvedBottomBarExpo.Navigator>
-      </View>
+    </View>
   );
 }
 
@@ -156,15 +115,14 @@ export const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
   },
-  bottomBar: {
-  },
+  bottomBar: {},
   btnCircleUp: {
     width: 60,
     height: 60,
     borderRadius: 30,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor:"#38BD10",
+    backgroundColor: '#38BD10',
     bottom: 30,
     shadowColor: '#000',
     shadowOffset: {

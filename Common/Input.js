@@ -7,7 +7,8 @@ const Input = (props) => {
       <View style={styles.container}>
         <Text style={styles.label}>{props.label}</Text>
         <TextInput
-          placeholderTextColor="white"
+        style={{color:"black"}}
+          placeholderTextColor="black"
           placeholder={props.placeholder}
           keyboardType={props.keyboardType}
           value={props.value}
@@ -21,16 +22,15 @@ const Input = (props) => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "column",
-    color:"white",
+    color:"black",
     borderWidth: 1,
     paddingHorizontal: 10,
-    backgroundColor:"#E8E8F7",
     paddingVertical: 5,
     borderRadius: 10,
   },
   label: {
     fontSize: 10,
-    color:"white"
+    color:"black"
   },
 });
 

@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View ,Image,TouchableOpacity, ScrollView} from 'react-native'
 import React, { useEffect, useState }  from 'react'
-import {Avatar, Badge} from 'react-native-paper';
+import { Badge} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Feather';
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 import auth from '@react-native-firebase/auth';
@@ -17,7 +17,6 @@ useEffect(async ()=>{
   const name = await AsyncStorage.getItem('name')
   console.log(name);
   setName(name)
-console.log(n);
 },[])
 
 
@@ -42,7 +41,6 @@ console.log(n);
         }
         else {
             // Use the image from the camera here
-            console.log('Image URI: ', response.assets[0].uri);
             setfile(response.assets[0].uri)
             imageupload(response.assets[0].uri)
 
@@ -59,12 +57,10 @@ const openGallery = () => {
 
   launchImageLibrary(options, (response) => {
     if (response.didCancel) {
-      console.log('User cancelled the camera.');
     } else if (response.error) {
       console.log('Camera Error: ', response.error);
     } else {
       // Use the image from the camera here
-      console.log('Image URI: ', response.assets[0].uri);
       setfile(response.assets[0].uri);
      imageupload(response.assets[0].uri);
     }
@@ -92,7 +88,6 @@ const imageupload = (imageurl) => {
             const img_url = downloadURL;
             setimage(downloadURL)
             
-            console.log('File available at', downloadURL);
            
           });
         }
@@ -107,10 +102,9 @@ const imageupload = (imageurl) => {
   const LogOut =async ()=>{
     try {
       await auth().signOut();
-      console.log('User signed out successfully');
      navigation.replace('Login')
     } catch (error) {
-      console.error('Error signing out:', error.message);
+      console.error('Error  out:', error.message);
     }
   }
 

@@ -6,7 +6,7 @@ import { ActivityIndicator, MD2Colors, Text } from 'react-native-paper';
 
 
 import React, { useEffect, useRef } from 'react';
-import { View, Image, Animated, Easing } from 'react-native';
+import {  Image, Animated, Easing } from 'react-native';
 
 const Splash = () => {
   const fadeAnim = useRef(new Animated.Value(0)).current;
