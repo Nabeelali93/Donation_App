@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "333792099559",
+    "firebase_url": "https://devathon-b599a-default-rtdb.firebaseio.com",
+    "project_id": "devathon-b599a",
+    "storage_bucket": "devathon-b599a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:333792099559:android:79aca0ea3f41d095fd7642",
+        "android_client_info": {
+          "package_name": "com.devathon"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKOJuxAYR_oOkOW2RAR8XF9CldlB86HE8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
